@@ -29,14 +29,14 @@ let response = await inquirer
         message: 'Please list any contributors to the project:',
       },
       {
-        type: 'input',
+        type: 'list',
         name: 'license',
         message: 'What license will you use for your project?',
         choices: ['Apache License v2.0', 'GNU General Public License v3.0', 'MIT License'],
         filter(val) {
             return val.toLowerCase();
         }
-      },
+    },
       {
         type: 'input',
         name: 'tests',
