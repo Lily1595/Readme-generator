@@ -15,11 +15,6 @@ let response = await inquirer
       },   
       {
         type: 'input',
-        name: 'tableOfContents',
-        message: 'Please provide a description of your project:',
-      },   
-      {
-        type: 'input',
         name: 'installationInstructions',
         message: 'Please provide installation instructions:',
       },
@@ -45,12 +40,7 @@ let response = await inquirer
       {
         type: 'input',
         name: 'tests',
-        message: 'What tests have you completed?',
-      },
-      {
-        type: 'input',
-        name: 'questions',
-        message: 'List  any faq to include',
+        message: 'What are the test instructions for this app?',
       },
       {
         type: 'input',
@@ -64,8 +54,49 @@ let response = await inquirer
       }
 ])
 
-let readmeText = '# Project Description ${answers.projectTitle}'
+.then((answers) => {
+    const readmeContents = `# ${answers.projectTitle}
 
+${answers.projectDescription}
 
+## Table of Contents
 
-fs.writeFile("README.md", readmeText)
+1. [Installation](#installation)
+2. [Usage](#usage)
+3. [Contributors](#contributors)
+4. [License](#license)
+5. [Questions](#questions)
+
+## Installation
+
+${answers.installationInstructions}
+
+## Usage
+
+${answers.usage}
+
+## Contributors
+
+${answers.contributors}
+
+## License
+
+This project is licensed under the ${answers.license} license.
+
+## Tests
+
+${answers.tests}
+
+## Questions
+
+If you have any questions about the app, feel free to contact [${answers.githubUsername}](https://github.com/${answers.githubUsername}) directly at ${answers.email}.
+`;
+
+    fs.writeFile('README.md', readmeContents, (err) => {
+      if (err) {
+        console.error(err);
+      } else {
+        console.log('README.md file generated!');
+      }
+    });
+  });
