@@ -1,6 +1,6 @@
-# Readme generator 
+# Readme Generator  
 
-This is a readme generator to create quick and easy quality readme's!
+This project will create a readme file from the terminal using node  
 
 ## Table of Contents
 
@@ -12,11 +12,11 @@ This is a readme generator to create quick and easy quality readme's!
 
 ## Installation
 
-please download node and run this code through your terminal to create your quality readme 
+Please run thi programme through your terminal using node.js
 
 ## Usage
 
-Once the user has answered all the questions and selected their preferred license, a readme file will be automatically generated 
+Please answer all the questions in the terminal to deliver a time efficient and quality readme 
 
 ## Contributors
 
@@ -32,4 +32,4 @@ n/a
 
 ## Questions
 
-If you have any questions about the app, feel free to contact [lily1595](https://github.com/lily1595) directly at ***.
+If you have any questions about the app, feel free to contact [lily1595](https://github.com/lily1595) directly at *******.
